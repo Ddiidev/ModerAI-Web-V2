@@ -5,7 +5,7 @@
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
 	import { signOut } from "@auth/sveltekit/client";
-	import { Dna, Brain, Globe, Cpu } from "@lucide/svelte";
+	import { Dna, Brain, Globe, Cpu, Menu, X } from "@lucide/svelte";
 	import LoginButton from "../components/LoginButton.svelte";
 	import DemonstrationChatModeration from "../components/DemonstrationChatModeration.svelte";
 	import DemonstrationTwitchModeration from "../components/DemonstrationTwitchModeration.svelte";
@@ -13,11 +13,17 @@
 
 	let mounted = false;
 	let scrollY = 0;
+	let mobileMenuOpen = false;
 
 	let activeTab: "chat" | "twitch" = "chat";
 
 	$: session = $page.data.session;
 	$: isAuthenticated = !!(session && session.user);
+
+	// Função para alternar o menu mobile
+	function toggleMobileMenu() {
+		mobileMenuOpen = !mobileMenuOpen;
+	}
 
 	// Variáveis para animação de contagem
 	let precisionCount = 0;
@@ -273,7 +279,52 @@
 					>
 					<LoginButton variant="accent" size="md" />
 				</div>
+
+				<!-- Mobile Menu Controls -->
+				<div class="md:hidden flex items-center space-x-2">
+					<!-- Login Button (Icon Only) -->
+					<LoginButton variant="accent" size="sm" iconOnly={true} />
+
+					<!-- Mobile Menu Button -->
+					<button 
+						class="flex items-center text-gray-700 hover:text-emerald-600 focus:outline-none" 
+						on:click={toggleMobileMenu}
+						aria-label="Toggle mobile menu"
+					>
+						{#if mobileMenuOpen}
+							<X size={24} />
+						{:else}
+							<Menu size={24} />
+						{/if}
+					</button>
+				</div>
 			</div>
+
+			<!-- Mobile Menu -->
+			{#if mobileMenuOpen}
+				<div class="md:hidden py-4 mt-2 bg-white/95 rounded-lg shadow-lg">
+					<div class="flex flex-col space-y-4 px-4">
+						<a
+							href="#features"
+							class="text-gray-700 hover:text-emerald-600 py-2 border-b border-gray-100"
+							on:click={() => (mobileMenuOpen = false)}
+						>Recursos</a
+						>
+						<a
+							href="#pricing"
+							class="text-gray-700 hover:text-emerald-600 py-2 border-b border-gray-100"
+							on:click={() => (mobileMenuOpen = false)}
+						>Preços</a
+						>
+						<a
+							href="#contact"
+							class="text-gray-700 hover:text-emerald-600 py-2 border-b border-gray-100"
+							on:click={() => (mobileMenuOpen = false)}
+						>Contato</a
+						>
+					</div>
+				</div>
+			{/if}
 		</nav>
 	</header>
 

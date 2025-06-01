@@ -439,10 +439,10 @@
         class="flex flex-col md:flex-row h-auto md:h-[80vh] w-[98vw] max-w-2xl md:max-w-4xl rounded-2xl shadow-2xl overflow-hidden border border-gray-800 bg-gray-900"
     >
         <!-- Main Stream Content -->
-        <div class="flex-1 flex items-center justify-center bg-gray-800 p-2">
+        <div class="flex-1 flex items-center justify-center bg-gray-800 p-2 h-[65vh] md:h-auto">
             <!-- Stream Video Area -->
             <div
-                class="w-[30vw] h-full aspect-square bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center relative rounded-xl shadow-lg"
+                class="w-full h-full bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center relative rounded-xl shadow-lg"
             >
                 <!-- Donation Alert Container -->
                 <div
@@ -510,7 +510,7 @@
 
         <!-- Chat Sidebar -->
         <div
-            class="w-full min-w-[220px] md:w-[340px] lg:w-[400px] bg-gray-800 border-t md:border-t-0 md:border-l border-gray-700 flex flex-col"
+            class="w-full min-w-[220px] md:w-[340px] lg:w-[400px] bg-gray-800 border-t md:border-t-0 md:border-l border-gray-700 flex flex-col h-[30vh] md:h-auto"
         >
             <!-- Chat Header -->
             <div
