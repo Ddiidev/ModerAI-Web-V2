@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Estilos personalizados do projeto original */
+
+/* Configuração de scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Configuração de fontes */
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Gradiente de texto verde-amarelo */
+.text-gradient {
+  background: linear-gradient(90deg, #10b981, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Efeito de glassmorphism para cards */
+.card-glass {
+  background: rgba(16, 185, 129, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(4, 120, 87, 0.2);
+}
+
+/* Estilização personalizada da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(251, 191, 36, 0.3);
+}
+
+/* Animação de flutuação */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Classes de container responsivas */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}

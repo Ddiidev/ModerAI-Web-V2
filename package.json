@@ -1,39 +1,49 @@
 {
-	"name": "tailwind",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "^6.0.0",
-		"@sveltejs/kit": "^2.16.0",
-		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"@tailwindcss/typography": "^0.5.15",
-		"@tailwindcss/vite": "^4.0.0",
-		"@types/aos": "^3.0.7",
-		"aos": "^2.3.4",
-		"svelte": "^5.0.0",
-		"svelte-adapter-bun": "^0.5.2",
-		"svelte-check": "^4.0.0",
-		"tailwindcss": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^6.2.6",
-		"preact": "^10.24.3"
-	},
-	"dependencies": {
-		"@auth/core": "^0.39.1",
-		"@auth/sveltekit": "^1.9.2",
-		"@google-cloud/local-auth": "^3.0.1",
-		"@lucide/svelte": "^0.511.0",
-		"google-auth-library": "^9.15.1",
-		"googleapis": "^149.0.0",
-		"murphyjs": "^2.5.2"
-	}
+  "name": "moderai-vue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --inspect run vite",
+    "dev:debug": "bun --inspect-brk run vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@dotlottie/player-component": "^2.7.12",
+    "@types/marked": "^6.0.0",
+    "chart.js": "^4.4.9",
+    "lucide-vue-next": "^0.513.0",
+    "marked": "^15.0.12",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-chartjs": "^5.3.2",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tsconfig/node22": "^22.0.1",
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.22.0",
+    "eslint-plugin-vue": "~10.0.0",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^7.0.2",
+    "postcss": "^8.5.4",
+    "prettier": "3.5.3",
+    "tailwindcss": "^4.1.8",
+    "typescript": "~5.8.0",
+    "vite": "^6.2.4",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^2.2.8"
+  }
 }
